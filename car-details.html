@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HVAC Template">
+    <meta name="keywords" content="HVAC, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/dfba5e2447.js" crossorigin="anonymous"></script>
+    <title>Car Details - AUTOBUBA</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="loading.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-container">
+      <!-- Speedometer -->
+      <div class="speedometer-container">
+        <div class="speedometer">
+          <div class="speedometer-scale">
+            <div class="scale-mark mark-0"><span>0</span></div>
+            <div class="scale-mark mark-20"><span>20</span></div>
+            <div class="scale-mark mark-40"><span>40</span></div>
+            <div class="scale-mark mark-60"><span>60</span></div>
+            <div class="scale-mark mark-80"><span>80</span></div>
+            <div class="scale-mark mark-100"><span>100</span></div>
+          </div>
+          <div class="needle-container">
+            <div class="needle"></div>
+            <div class="needle-center"></div>
+          </div>
+          <div class="speed-display">
+            <span id="speed-value">0</span>
+            <span class="speed-unit">km/h</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Loading Text -->
+      <div class="loading-text">
+        <span>L</span>
+        <span>O</span>
+        <span>A</span>
+        <span>D</span>
+        <span>I</span>
+        <span>N</span>
+        <span>G</span>
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+      </div>
+      
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+      
+      <!-- AUTOBUBA Text -->
+      <div class="autobuba-text">AUTOBUBA</div>
+    </div>
+  </div>
+
+<!-- Header Section Begin -->
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <img src="img/logo zoom.png" alt="AUTOBUBA" class="img-fluid" style="max-height: 60px;">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link text-black text-decoration-none mx-4" href="car.html">Cars</a></li>
+                    <li class="nav-item"><a class="nav-link text-black text-decoration-none mx-4" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link text-black text-decoration-none mx-4 underline" href="car-details.html">Car Details</a></li>
+                    <li class="nav-item"><a class="nav-link text-black text-decoration-none mx-4" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-black text-decoration-none mx-4" href="contact.html">Contact</a></li>
+                </ul>
+                
+                <!-- Update the cart icon in the header section -->
+                <div class="header__nav__widget d-flex align-items-center ml-lg-3">
+                    <div class="header__nav__widget__btn">
+                        <a href="Book a Test Drive.html" class="mr-3"><i class="fa-solid fa-car-side"></i></a>
+                        <a id="cart" href="#" class="mr-3 position-relative">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="badge bg-danger position-absolute" id="cart-count"></span>
+                        </a>
+                        <div class="nav-item report-icon">
+                            <a href="report.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Report a problem">
+                                <i class="fa-solid fa-flag"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="cart-cars" id="cartCars" style="display: none;">
+                            <button id="closeCartdisplay" class="close-btn">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <div id="selectedCars" class="selected-cars-container">
+                                <!-- Selected Cars will be displayed here -->
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="window.open('login.html')" class="primary-btn ml-3">Log In</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Header Section End -->
+
+    <!-- Breadcrumb End -->
+    <div class="breadcrumb-option set-bg" data-setbg="img/breadcrumb-about_us.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Car Details</h2>
+                        <div class="breadcrumb__links">
+                            <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                            <a href="#">Car Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Begin -->
+
+    <!-- Car Details Section Begin -->
+    <section class="car-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="car__details__pic">
+                        <div class="car__details__pic__large">
+                            <img class="car-big-img" src="img/cars/details/cd-1.jpg" alt="">
+                        </div>
+                        <div class="car-thumbs">
+                            <div class="car-thumbs-track car__thumb__slider owl-carousel">
+                                <div class="ct" data-imgbigurl="img/cars/details/cd-2.jpg"><img
+                                        src="img/cars/details/sm-1.jpg" alt=""></div>
+                                <div class="ct" data-imgbigurl="img/cars/details/cd-3.jpg"><img
+                                        src="img/cars/details/sm-2.jpg" alt=""></div>
+                                <div class="ct" data-imgbigurl="img/cars/details/cd-4.jpg"><img
+                                        src="img/cars/details/sm-3.jpg" alt=""></div>
+                                <div class="ct" data-imgbigurl="img/cars/details/cd-5.jpg"><img
+                                        src="img/cars/details/sm-4.jpg" alt=""></div>
+                                <div class="ct" data-imgbigurl="img/cars/details/cd-6.jpg"><img
+                                        src="img/cars/details/sm-5.jpg" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car__details__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Vehicle
+                                    Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Technical</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Features & Options</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">Vehicle Location</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <div class="car__details__tab__info">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="car__details__tab__info__item">
+                                                <h5>General Information</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check"></i> Pellentesque lacus urna, feugiat non
+                                                        consectetur nec</li>
+                                                    <li><i class="fa fa-check"></i> Aliquam sem neque, efficitur atero
+                                                        lectus vitae.</li>
+                                                    <li><i class="fa fa-check"></i> Pellentesque erat libero, eleifend
+                                                        sit amet felis ido.</li>
+                                                    <li><i class="fa fa-check"></i> Maecenas eget consectetur quam.
+                                                        Vestibulum ligula.</li>
+                                                    <li><i class="fa fa-check"></i> Praesent lorem sapien, vestibulum
+                                                        eget aliquet et.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="car__details__tab__info__item">
+                                                <h5>General Information</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check"></i> Pellentesque lacus urna, feugiat non
+                                                        consectetur nec</li>
+                                                    <li><i class="fa fa-check"></i> Aliquam sem neque, efficitur atero
+                                                        lectus vitae.</li>
+                                                    <li><i class="fa fa-check"></i> Pellentesque erat libero, eleifend
+                                                        sit amet felis ido.</li>
+                                                    <li><i class="fa fa-check"></i> Maecenas eget consectetur quam.
+                                                        Vestibulum ligula.</li>
+                                                    <li><i class="fa fa-check"></i> Praesent lorem sapien, vestibulum
+                                                        eget aliquet et.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="car__details__tab__feature">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Interior Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> Auxiliary heating</li>
+                                                    <li><i class="fa fa-check-circle"></i> Bluetooth</li>
+                                                    <li><i class="fa fa-check-circle"></i> CD player</li>
+                                                    <li><i class="fa fa-check-circle"></i> Central locking</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Safety Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> Head-up display</li>
+                                                    <li><i class="fa fa-check-circle"></i> MP3 interface</li>
+                                                    <li><i class="fa fa-check-circle"></i> Navigation system</li>
+                                                    <li><i class="fa fa-check-circle"></i> Panoramic roof</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Extra Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> Alloy wheels</li>
+                                                    <li><i class="fa fa-check-circle"></i> Electric side mirror</li>
+                                                    <li><i class="fa fa-check-circle"></i> Sports package</li>
+                                                    <li><i class="fa fa-check-circle"></i> Sports suspension</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Extra Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> MP3 interface</li>
+                                                    <li><i class="fa fa-check-circle"></i> Navigation system</li>
+                                                    <li><i class="fa fa-check-circle"></i> Panoramic roof</li>
+                                                    <li><i class="fa fa-check-circle"></i> Parking sensors</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <div class="car__details__tab__info">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="car__details__tab__info__item">
+                                                <h5>General Information2</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check"></i> Pellentesque lacus urna, feugiat non
+                                                        consectetur nec</li>
+                                                    <li><i class="fa fa-check"></i> Aliquam sem neque, efficitur atero
+                                                        lectus vitae.</li>
+                                                    <li><i class="fa fa-check"></i> Pellentesque erat libero, eleifend
+                                                        sit amet felis ido.</li>
+                                                    <li><i class="fa fa-check"></i> Maecenas eget consectetur quam.
+                                                        Vestibulum ligula.</li>
+                                                    <li><i class="fa fa-check"></i> Praesent lorem sapien, vestibulum
+                                                        eget aliquet et.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="car__details__tab__info__item">
+                                                <h5>General Information</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check"></i> Pellentesque lacus urna, feugiat non
+                                                        consectetur nec</li>
+                                                    <li><i class="fa fa-check"></i> Aliquam sem neque, efficitur atero
+                                                        lectus vitae.</li>
+                                                    <li><i class="fa fa-check"></i> Pellentesque erat libero, eleifend
+                                                        sit amet felis ido.</li>
+                                                    <li><i class="fa fa-check"></i> Maecenas eget consectetur quam.
+                                                        Vestibulum ligula.</li>
+                                                    <li><i class="fa fa-check"></i> Praesent lorem sapien, vestibulum
+                                                        eget aliquet et.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="car__details__tab__feature">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Interior Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> Auxiliary heating</li>
+                                                    <li><i class="fa fa-check-circle"></i> Bluetooth</li>
+                                                    <li><i class="fa fa-check-circle"></i> CD player</li>
+                                                    <li><i class="fa fa-check-circle"></i> Central locking</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Safety Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> Head-up display</li>
+                                                    <li><i class="fa fa-check-circle"></i> MP3 interface</li>
+                                                    <li><i class="fa fa-check-circle"></i> Navigation system</li>
+                                                    <li><i class="fa fa-check-circle"></i> Panoramic roof</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Extra Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> Alloy wheels</li>
+                                                    <li><i class="fa fa-check-circle"></i> Electric side mirror</li>
+                                                    <li><i class="fa fa-check-circle"></i> Sports package</li>
+                                                    <li><i class="fa fa-check-circle"></i> Sports suspension</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Extra Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> MP3 interface</li>
+                                                    <li><i class="fa fa-check-circle"></i> Navigation system</li>
+                                                    <li><i class="fa fa-check-circle"></i> Panoramic roof</li>
+                                                    <li><i class="fa fa-check-circle"></i> Parking sensors</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-3" role="tabpanel">
+                                <div class="car__details__tab__info">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="car__details__tab__info__item">
+                                                <h5>General Information3</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check"></i> Pellentesque lacus urna, feugiat non
+                                                        consectetur nec</li>
+                                                    <li><i class="fa fa-check"></i> Aliquam sem neque, efficitur atero
+                                                        lectus vitae.</li>
+                                                    <li><i class="fa fa-check"></i> Pellentesque erat libero, eleifend
+                                                        sit amet felis ido.</li>
+                                                    <li><i class="fa fa-check"></i> Maecenas eget consectetur quam.
+                                                        Vestibulum ligula.</li>
+                                                    <li><i class="fa fa-check"></i> Praesent lorem sapien, vestibulum
+                                                        eget aliquet et.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="car__details__tab__info__item">
+                                                <h5>General Information</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check"></i> Pellentesque lacus urna, feugiat non
+                                                        consectetur nec</li>
+                                                    <li><i class="fa fa-check"></i> Aliquam sem neque, efficitur atero
+                                                        lectus vitae.</li>
+                                                    <li><i class="fa fa-check"></i> Pellentesque erat libero, eleifend
+                                                        sit amet felis ido.</li>
+                                                    <li><i class="fa fa-check"></i> Maecenas eget consectetur quam.
+                                                        Vestibulum ligula.</li>
+                                                    <li><i class="fa fa-check"></i> Praesent lorem sapien, vestibulum
+                                                        eget aliquet et.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="car__details__tab__feature">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Interior Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> Auxiliary heating</li>
+                                                    <li><i class="fa fa-check-circle"></i> Bluetooth</li>
+                                                    <li><i class="fa fa-check-circle"></i> CD player</li>
+                                                    <li><i class="fa fa-check-circle"></i> Central locking</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Safety Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> Head-up display</li>
+                                                    <li><i class="fa fa-check-circle"></i> MP3 interface</li>
+                                                    <li><i class="fa fa-check-circle"></i> Navigation system</li>
+                                                    <li><i class="fa fa-check-circle"></i> Panoramic roof</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Extra Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> Alloy wheels</li>
+                                                    <li><i class="fa fa-check-circle"></i> Electric side mirror</li>
+                                                    <li><i class="fa fa-check-circle"></i> Sports package</li>
+                                                    <li><i class="fa fa-check-circle"></i> Sports suspension</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Extra Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> MP3 interface</li>
+                                                    <li><i class="fa fa-check-circle"></i> Navigation system</li>
+                                                    <li><i class="fa fa-check-circle"></i> Panoramic roof</li>
+                                                    <li><i class="fa fa-check-circle"></i> Parking sensors</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-4" role="tabpanel">
+                                <div class="car__details__tab__info">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="car__details__tab__info__item">
+                                                <h5>General Information4</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check"></i> Pellentesque lacus urna, feugiat non
+                                                        consectetur nec</li>
+                                                    <li><i class="fa fa-check"></i> Aliquam sem neque, efficitur atero
+                                                        lectus vitae.</li>
+                                                    <li><i class="fa fa-check"></i> Pellentesque erat libero, eleifend
+                                                        sit amet felis ido.</li>
+                                                    <li><i class="fa fa-check"></i> Maecenas eget consectetur quam.
+                                                        Vestibulum ligula.</li>
+                                                    <li><i class="fa fa-check"></i> Praesent lorem sapien, vestibulum
+                                                        eget aliquet et.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="car__details__tab__info__item">
+                                                <h5>General Information</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check"></i> Pellentesque lacus urna, feugiat non
+                                                        consectetur nec</li>
+                                                    <li><i class="fa fa-check"></i> Aliquam sem neque, efficitur atero
+                                                        lectus vitae.</li>
+                                                    <li><i class="fa fa-check"></i> Pellentesque erat libero, eleifend
+                                                        sit amet felis ido.</li>
+                                                    <li><i class="fa fa-check"></i> Maecenas eget consectetur quam.
+                                                        Vestibulum ligula.</li>
+                                                    <li><i class="fa fa-check"></i> Praesent lorem sapien, vestibulum
+                                                        eget aliquet et.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="car__details__tab__feature">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Interior Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> Auxiliary heating</li>
+                                                    <li><i class="fa fa-check-circle"></i> Bluetooth</li>
+                                                    <li><i class="fa fa-check-circle"></i> CD player</li>
+                                                    <li><i class="fa fa-check-circle"></i> Central locking</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Safety Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> Head-up display</li>
+                                                    <li><i class="fa fa-check-circle"></i> MP3 interface</li>
+                                                    <li><i class="fa fa-check-circle"></i> Navigation system</li>
+                                                    <li><i class="fa fa-check-circle"></i> Panoramic roof</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Extra Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> Alloy wheels</li>
+                                                    <li><i class="fa fa-check-circle"></i> Electric side mirror</li>
+                                                    <li><i class="fa fa-check-circle"></i> Sports package</li>
+                                                    <li><i class="fa fa-check-circle"></i> Sports suspension</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="car__details__tab__feature__item">
+                                                <h5>Extra Design</h5>
+                                                <ul>
+                                                    <li><i class="fa fa-check-circle"></i> MP3 interface</li>
+                                                    <li><i class="fa fa-check-circle"></i> Navigation system</li>
+                                                    <li><i class="fa fa-check-circle"></i> Panoramic roof</li>
+                                                    <li><i class="fa fa-check-circle"></i> Parking sensors</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="car__details__sidebar">
+                        <div class="car__details__sidebar__model">
+                            <ul>
+                                <li><span>Porsche Cayenne Turbo S</span></li>
+                                <li> <span>2019</span></li>
+                            </ul>
+                            <ul>
+                                <li>Vin <span>3VWKM245686</span></li>
+                            </ul>
+                        </div>
+                        <div class="car__details__sidebar__payment">
+                            <ul>
+                                <li>Price <span>$117,000</span></li>
+                            </ul>
+                            <a href="payment/car-checkout.html" class="primary-btn"><i class="fa fa-credit-card"></i>Purchase</a>
+                            <a href="payment/car-checkout.html" class="primary-btn sidebar-btn"><i class="fa fa-sliders"></i>Build Payment</a>
+                            <a href="#" class="primary-btn sidebar-btn"><i class="fa fa-download"></i>Vehicle Documents</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Car Details Section End -->
+
+<!-- Footer Section Begin -->
+<footer class="footer set-bg" data-setbg="img/footer-bg.jpg">
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                <div class="footer__about">
+                    <div class="footer__logo">
+                        <img src="img/logo zoom.png" alt="Autobuba Logo" class="img-fluid">
+                    </div>
+                    <div class="footer__contact-box">
+                        <p><i class="fa fa-envelope"></i> info@autobuba.com</p>
+                        <p><i class="fa fa-phone"></i> +1 234 567 8900</p>
+                    </div>
+                    <div class="footer__social">
+                        <a href="#" class="social-btn facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="social-btn twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6 mb-4 mb-md-0">
+                <div class="footer__widget">
+                    <h5 data-translate="Navigation">Navigation</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="contact.html" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Contact Us">Contact Us</span></a></li>
+                        <li><a href="car.html" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Cars">Cars</span></a></li>
+                        <li><a href="blog.html" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Blog">Blog</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6 mb-4 mb-md-0">
+                <div class="footer__widget">
+                    <h5 data-translate="Cars">Cars</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Hatchback">Hatchback</span></a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Sedan">Sedan</span></a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="SUV">SUV</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="footer__brand">
+                    <h5 data-translate="Learn">Learn</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="about.html" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="About Us">About Us</span></a></li>
+                        <li><a href="#chooseUs" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Why Us ?">Why Us ?</span></a></li>
+                        <li><a href="#trustedName" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Who are we ?">Who are we ?</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="copyright">© Copyright 2025 AUTOBUBA. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+    <!-- Simple Phone Button -->
+<div class="phone-container">
+    <div class="phone-logo" id="phoneLogo">
+      <div class="phone-icon">
+        <i class="fa-solid fa-phone"></i>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <h2 class="modal-title">Contact Information</h2>
+      <p>Please call us at:</p>
+      <div class="modal-number-container">
+        <a href="tel:+69 69 690 6969" class="modal-number" id="phoneNumber">+69 69 690 6969</a>
+        <button class="modal-copy-button" id="modalCopyButton">
+          <svg class="modal-copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+          </svg>
+        </button>
+        <span class="copy-tooltip" id="modalTooltip">Copied to clipboard!</span>
+      </div>
+      <button class="close-button" id="closeModal">Close</button>
+    </div>
+  </div>
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="loading.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Translations for car-details.html
+            const translations = {
+                en: {
+                    // Navigation
+                    "Cars": "Cars",
+                    "Blog": "Blog",
+                    "Car Details": "Car Details",
+                    "About": "About",
+                    "Contact": "Contact",
+                    "Log In": "Log In",
+                    
+                    // Breadcrumb
+                    "Porsche Cayenne Turbo S 2019": "Porsche Cayenne Turbo S 2019",
+                    "Home": "Home",
+                    "Car Listing": "Car Listing",
+                    
+                    // Car Details Content
+                    "Porsche cayenne turbo s": "Porsche cayenne turbo s",
+                    "Vehicle Overview": "Vehicle Overview",
+                    "Technical": "Technical",
+                    "Features & Options": "Features & Options",
+                    "Vehicle Location": "Vehicle Location",
+                    "General Information": "General Information",
+                    "Interior Design": "Interior Design",
+                    "Safety Design": "Safety Design",
+                    "Extra Design": "Extra Design",
+                    "Stock": "Stock",
+                    "Vin": "Vin",
+                    "Get Today's Price": "Get Today's Price",
+                    "Pricing Today": "Pricing Today",
+                    "MSRP": "MSRP",
+                    "Dealer Discounts": "Dealer Discounts",
+                    "Price": "Price",
+                    "Purchase": "Purchase",
+                    "Build Payment": "Build Payment",
+                    "Value Trade": "Value Trade",
+                    "Vehicle Documents": "Vehicle Documents",
+                    "Test Drive": "Test Drive",
+                    "Add to Cart": "Add to Cart",
+                    
+                    // Footer
+                    "Contact Us Now!": "Contact Us Now!",
+                    "Any questions? Let us know on +69 69 690 6969": "Any questions? Let us know on +69 69 690 6969",
+                    "Navigation": "Navigation",
+                    "Contact Us": "Contact Us",
+                    "Hatchback": "Hatchback",
+                    "Sedan": "Sedan",
+                    "SUV": "SUV",
+                    "Learn": "Learn",
+                    "About Us": "About Us",
+                    "Why Us ?": "Why Us ?",
+                    "Who are we ?": "Who are we ?",
+                    "Search here.....": "Search here....."
+                },
+                sq: {
+                    // Navigation
+                    "Cars": "Makinat",
+                    "Blog": "Blogu",
+                    "Car Details": "Detajet e Makinës",
+                    "About": "Rreth Nesh",
+                    "Contact": "Kontakti",
+                    "Log In": "Hyr",
+                    
+                    // Breadcrumb
+                    "Porsche Cayenne Turbo S 2019": "Porsche Cayenne Turbo S 2019",
+                    "Home": "Kryefaqja",
+                    "Car Listing": "Lista e Makinave",
+                    
+                    // Car Details Content
+                    "Porsche cayenne turbo s": "Porsche cayenne turbo s",
+                    "Vehicle Overview": "Përmbledhje e Automjetit",
+                    "Technical": "Teknike",
+                    "Features & Options": "Veçori & Opsione",
+                    "Vehicle Location": "Vendndodhja e Automjetit",
+                    "General Information": "Informacion i Përgjithshëm",
+                    "Interior Design": "Dizajni i Brendshëm",
+                    "Safety Design": "Dizajni i Sigurisë",
+                    "Extra Design": "Dizajn Shtesë",
+                    "Stock": "Stok",
+                    "Vin": "Vin",
+                    "Get Today's Price": "Merr Çmimin e Sotëm",
+                    "Pricing Today": "Çmimi Sot",
+                    "MSRP": "MSRP",
+                    "Dealer Discounts": "Zbritjet e Shitësit",
+                    "Price": "Çmimi",
+                    "Purchase": "Blej",
+                    "Build Payment": "Ndërto Pagesën",
+                    "Value Trade": "Vlerëso Shkëmbimin",
+                    "Vehicle Documents": "Dokumentet e Automjetit",
+                    "Test Drive": "Provë Drejtimi",
+                    "Add to Cart": "Shto në Shportë",
+                    
+                    // Footer
+                    "Contact Us Now!": "Na Kontaktoni Tani!",
+                    "Any questions? Let us know on +69 69 690 6969": "Keni pyetje? Na njoftoni në +69 69 690 6969",
+                    "Navigation": "Navigimi",
+                    "Contact Us": "Na Kontaktoni",
+                    "Hatchback": "Hatchback",
+                    "Sedan": "Sedan",
+                    "SUV": "SUV",
+                    "Learn": "Mëso",
+                    "About Us": "Rreth Nesh",
+                    "Why Us ?": "Pse Ne ?",
+                    "Who are we ?": "Kush jemi ne ?",
+                    "Search here.....": "Kërko këtu....."
+                }
+            };
+        
+            // Add language selector dropdown to the header if it doesn't exist
+            const headerNavWidget = document.querySelector('.header__nav__widget');
+            if (headerNavWidget && !document.querySelector('.language-selector')) {
+                const loginButton = headerNavWidget.querySelector('.primary-btn');
+                
+                // Create language selector dropdown
+                const languageSelector = document.createElement('div');
+                languageSelector.className = 'dropdown language-selector mr-3';
+                languageSelector.innerHTML = `
+                    <button class="btn btn-danger dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-expanded="false">
+                        <span id="currentLanguage">English</span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item language-option" href="#" data-lang="en">English</a>
+                        <a class="dropdown-item language-option" href="#" data-lang="sq">Shqip</a>
+                    </div>
+                `;
+                
+                // Insert before login button
+                if (loginButton) {
+                    headerNavWidget.insertBefore(languageSelector, loginButton);
+                } else {
+                    headerNavWidget.appendChild(languageSelector);
+                }
+            }
+        
+            // Set initial language from localStorage or default to English
+            let currentLang = localStorage.getItem('language') || 'en';
+            
+            // Apply translations on page load
+            applyTranslations();
+            updateLanguageDisplay();
+            
+            // Handle loading text translation separately
+            handleLoadingText();
+        
+            // Language selection handler
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentLang = this.getAttribute('data-lang');
+                    localStorage.setItem('language', currentLang);
+                    
+                    // Apply translations
+                    applyTranslations();
+                    updateLanguageDisplay();
+                    
+                    // Handle loading text if it's visible
+                    handleLoadingText();
+                });
+            });
+        
+            // Apply translations to the page
+            function applyTranslations() {
+                if (!translations[currentLang]) return;
+                
+                // Add data-translate attributes to elements that need translation
+                addDataTranslateAttributes();
+                
+                // Translate all elements with data-translate attribute
+                document.querySelectorAll('[data-translate]').forEach(el => {
+                    const key = el.getAttribute('data-translate');
+                    if (translations[currentLang][key]) {
+                        el.textContent = translations[currentLang][key];
+                    }
+                });
+                
+                // Special handling for placeholder text in search input
+                const searchInput = document.getElementById('search-input');
+                if (searchInput) {
+                    searchInput.placeholder = currentLang === 'en' ? 'Search here.....' : 'Kërko këtu.....';
+                }
+                
+                // Special handling for breadcrumb home icon
+                const breadcrumbHome = document.querySelector('.breadcrumb__links a[href="./index.html"]');
+                if (breadcrumbHome) {
+                    const homeText = translations[currentLang]["Home"];
+                    breadcrumbHome.innerHTML = `<i class="fa fa-home"></i> ${homeText}`;
+                }
+            }
+        
+            // Add data-translate attributes to elements that need translation
+            function addDataTranslateAttributes() {
+                // Navigation
+                const navItems = document.querySelectorAll('.navbar-nav .nav-item a');
+                navItems.forEach(item => {
+                    if (!item.hasAttribute('data-translate')) {
+                        item.setAttribute('data-translate', item.textContent.trim());
+                    }
+                });
+                
+                // Login button
+                const loginBtn = document.querySelector('.primary-btn');
+                if (loginBtn && !loginBtn.hasAttribute('data-translate')) {
+                    loginBtn.setAttribute('data-translate', loginBtn.textContent.trim());
+                }
+                
+                // Breadcrumb
+                const breadcrumbTitle = document.querySelector('.breadcrumb__text h2');
+                if (breadcrumbTitle && !breadcrumbTitle.hasAttribute('data-translate')) {
+                    breadcrumbTitle.setAttribute('data-translate', breadcrumbTitle.textContent.trim());
+                }
+                
+                document.querySelectorAll('.breadcrumb__links a, .breadcrumb__links span').forEach(item => {
+                    if (item.tagName === 'A' && item.querySelector('i.fa-home')) return;
+                    if (!item.hasAttribute('data-translate')) {
+                        item.setAttribute('data-translate', item.textContent.trim());
+                    }
+                });
+                
+                // Car details title
+                const carTitle = document.querySelector('.car-details__title h2');
+                if (carTitle && !carTitle.hasAttribute('data-translate')) {
+                    carTitle.setAttribute('data-translate', carTitle.textContent.trim());
+                }
+                
+                // Tab navigation
+                document.querySelectorAll('.car__details__tab .nav-item a').forEach(tab => {
+                    if (!tab.hasAttribute('data-translate')) {
+                        tab.setAttribute('data-translate', tab.textContent.trim());
+                    }
+                });
+                
+                // Tab content headings
+                document.querySelectorAll('.car__details__tab__content h5').forEach(heading => {
+                    if (!heading.hasAttribute('data-translate')) {
+                        heading.setAttribute('data-translate', heading.textContent.trim());
+                    }
+                });
+                
+                // Sidebar headings
+                document.querySelectorAll('.car__details__sidebar h5').forEach(heading => {
+                    if (!heading.hasAttribute('data-translate')) {
+                        heading.setAttribute('data-translate', heading.textContent.trim());
+                    }
+                });
+                
+                // Pricing table
+                document.querySelectorAll('.car__details__sidebar__price ul li span:first-child').forEach(label => {
+                    if (!label.hasAttribute('data-translate')) {
+                        label.setAttribute('data-translate', label.textContent.trim());
+                    }
+                });
+                
+                // Action buttons
+                document.querySelectorAll('.car__details__sidebar__btn a').forEach(btn => {
+                    if (!btn.hasAttribute('data-translate')) {
+                        btn.setAttribute('data-translate', btn.textContent.trim());
+                    }
+                });
+                
+                // Footer
+                const footerContactTitle = document.querySelector('.footer__contact__title h2');
+                if (footerContactTitle && !footerContactTitle.hasAttribute('data-translate')) {
+                    footerContactTitle.setAttribute('data-translate', footerContactTitle.textContent.trim());
+                }
+                
+                const footerAboutText = document.querySelector('.footer__about p');
+                if (footerAboutText && !footerAboutText.hasAttribute('data-translate')) {
+                    footerAboutText.setAttribute('data-translate', footerAboutText.textContent.trim());
+                }
+                
+                document.querySelectorAll('.footer__widget h5, .footer__brand h5').forEach(heading => {
+                    if (!heading.hasAttribute('data-translate')) {
+                        heading.setAttribute('data-translate', heading.textContent.trim());
+                    }
+                });
+                
+                document.querySelectorAll('.footer__widget ul li a span, .footer__brand ul li a span').forEach(link => {
+                    if (!link.hasAttribute('data-translate')) {
+                        link.setAttribute('data-translate', link.textContent.trim());
+                    }
+                });
+            }
+        
+            // Update the dropdown display
+            function updateLanguageDisplay() {
+                const display = document.getElementById('currentLanguage');
+                if (display) {
+                    display.textContent = currentLang === 'en' ? 'English' : 'Shqip';
+                }
+            }
+            
+            // Special handling for the loading text animation
+            function handleLoadingText() {
+                const loadingScreen = document.getElementById('loading-screen');
+                if (loadingScreen && window.getComputedStyle(loadingScreen).display !== 'none') {
+                    const loadingText = document.querySelector('.loading-text');
+                    if (loadingText) {
+                        // Clear existing content
+                        loadingText.innerHTML = '';
+                        
+                        // Create new content based on language
+                        const text = currentLang === 'en' ? 'LOADING...' : 'DUKE NGARKUAR...';
+                        
+                        // Add each letter as a span for animation
+                        for (let i = 0; i < text.length; i++) {
+                            const span = document.createElement('span');
+                            span.textContent = text[i];
+                            loadingText.appendChild(span);
+                        }
+                    }
+                }
+            }
+        });
+        </script>
+</body>
+
+</html>

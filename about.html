@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/dfba5e2447.js" crossorigin="anonymous"></script>
+    <title>About - AUTOBUBA</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="loading.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-container">
+      <!-- Speedometer -->
+      <div class="speedometer-container">
+        <div class="speedometer">
+          <div class="speedometer-scale">
+            <div class="scale-mark mark-0"><span>0</span></div>
+            <div class="scale-mark mark-20"><span>20</span></div>
+            <div class="scale-mark mark-40"><span>40</span></div>
+            <div class="scale-mark mark-60"><span>60</span></div>
+            <div class="scale-mark mark-80"><span>80</span></div>
+            <div class="scale-mark mark-100"><span>100</span></div>
+          </div>
+          <div class="needle-container">
+            <div class="needle"></div>
+            <div class="needle-center"></div>
+          </div>
+          <div class="speed-display">
+            <span id="speed-value">0</span>
+            <span class="speed-unit">km/h</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Loading Text -->
+      <div class="loading-text">
+        <span>L</span>
+        <span>O</span>
+        <span>A</span>
+        <span>D</span>
+        <span>I</span>
+        <span>N</span>
+        <span>G</span>
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+      </div>
+      
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+      
+      <!-- AUTOBUBA Text -->
+      <div class="autobuba-text">AUTOBUBA</div>
+    </div>
+  </div>
+
+<!-- Header Section Begin -->
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <img src="img/logo zoom.png" alt="AUTOBUBA" class="img-fluid" style="max-height: 60px;">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link text-black text-decoration-none mx-4" href="car.html">Cars</a></li>
+                    <li class="nav-item"><a class="nav-link text-black text-decoration-none mx-4" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link text-black text-decoration-none mx-4" href="car-details.html">Car Details</a></li>
+                    <li class="nav-item"><a class="nav-link text-black text-decoration-none mx-4 underline" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-black text-decoration-none mx-4" href="contact.html">Work</a></li>
+                </ul>
+
+                <div class="dropdown language-selector">
+                    <button class="btn btn-danger dropdown-toggle mr-3" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span id="currentLanguage">
+                        <span class="flag-icon flag-icon-gb"></span> English
+                      </span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                      <li>
+                        <a class="dropdown-item language-option" href="#" data-lang="en">
+                          <span class="flag-icon flag-icon-gb"></span> English
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item language-option" href="#" data-lang="sq">
+                          <span class="flag-icon flag-icon-al"></span> Shqip
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                
+                <!-- Update the cart icon in the header section -->
+                <div class="header__nav__widget d-flex align-items-center ml-lg-3">
+                    <div class="header__nav__widget__btn">
+                        <a href="Book a Test Drive.html" class="mr-3"><i class="fa-solid fa-car-side"></i></a>
+                        <a id="cart" href="#" class="mr-3 position-relative">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="badge bg-danger position-absolute" id="cart-count"></span>
+                        </a>
+                        <div class="nav-item report-icon">
+                            <a href="report.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Report a problem">
+                                <i class="fa-solid fa-flag"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="cart-cars" id="cartCars" style="display: none;">
+                            <button id="closeCartdisplay" class="close-btn">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <div id="selectedCars" class="selected-cars-container">
+                                <!-- Selected Cars will be displayed here -->
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="window.open('login.html')" class="primary-btn ml-3">Log In</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Header Section End -->
+
+
+    <!-- Breadcrumb End -->
+    <div class="breadcrumb-option set-bg" data-setbg="img/breadcrumb-about_us.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>About Us</h2>
+                        <div class="breadcrumb__links">
+                            <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                            <span>About Us</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Begin -->
+
+    <!-- About Us Section Begin -->
+    <section class="about spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title about-title">
+                        <h2>Welcome To AUTOBUBA <br />Where We Provide Everything You Need To A Car</h2>
+                        <p>First I will explain what contextual advertising is. Contextual advertising means the
+                            advertising of products on a website according to<br /> the content the page is displaying.
+                            For example if the content of a website was information on a Ford truck then the
+                            advertisements</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about__feature">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="about__feature__item">
+                            <img src="img/about/af-1.png" alt="">
+                            <h5>Quality Assurance System</h5>
+                            <p>It seems though that some of the biggest problems with the internet advertising trends
+                                are the lack of</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="about__feature__item">
+                            <img src="img/about/af-2.png" alt="">
+                            <h5>Accurate Testing Processes</h5>
+                            <p>Where do you register your complaints? How can you protest in any form against companies
+                                whose</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="about__feature__item">
+                            <img src="img/about/af-3.png" alt="">
+                            <h5>Infrastructure Integration Technology</h5>
+                            <p>So in final analysis: it’s true, I hate peeping Toms, but if I had to choose, I’d take
+                                one any day over an</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="about__pic">
+                        <img src="img/about_header_bg.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="about__item">
+                        <h5>Our Mission</h5>
+                        <p>Now, I’m not like Robin, that weirdo from my cultural anthropology class; I think that
+                            advertising is something that has its place in our society; which for better or worse is
+                            structured along a marketplace economy. But, simply because I feel advertising has a right
+                            to exist, doesn’t mean that I like or agree with it, in its</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="about__item">
+                        <h5>Our Vision</h5>
+                        <p>Where do you register your complaints? How can you protest in any form against companies
+                            whose advertising techniques you don’t agree with? You don’t. And on another point of
+                            difference between traditional products and their advertising and those of the internet
+                            nature, simply ignoring internet advertising is </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section End -->
+
+    <!-- Call Section Begin -->
+    <section class="call spad set-bg" data-setbg="img/about/call-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6">
+                    <div class="call__text">
+                        <div class="section-title">
+                            <h2>Request A Call Back</h2>
+                            <p>Posters had been a very beneficial marketing tool because it had paved to deliver an
+                                effective message that conveyed customer’s</p>
+                        </div>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1 col-md-6">
+                    <form action="#" class="call__form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="Email">
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="Phone">
+                            </div>
+                            <div class="col-lg-6">
+                                <select>
+                                    <option value="">Choose Our Services</option>
+                                    <option value="">Buy Cars</option>
+                                    <option value="">Sell Cars</option>
+                                    <option value="">Wash Cars</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="site-btn">Submit Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call Section End -->
+
+
+    <!-- Testimonial Section Begin -->
+    <section id="testimonies" class="testimonial spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title testimonial-title">
+                        <span>Testimonials</span>
+                        <h2>What People Say About Us</h2>
+                        <p>Our customers are our biggest supporters. What do they think of us? Lorem</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="testimonial__slider owl-carousel">
+                    <div class="col-lg-6">
+                        <div class="testimonial__item">
+                            <div class="testimonial__item__author">
+                                <div class="testimonial__item__author__pic">
+                                    <img src="img/testimonial/testimonial-1.png" alt="">
+                                </div>
+                                <div class="testimonial__item__author__text">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h5>John Smith /<span> CEO Colorlib</span></h5>
+                                </div>
+                            </div>
+                            <p>For one thing they usually step all over the hedges and plants on the side of someone’s
+                                house killing</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="testimonial__item">
+                            <div class="testimonial__item__author">
+                                <div class="testimonial__item__author__pic">
+                                    <img src="img/testimonial/testimonial-2.png" alt="">
+                                </div>
+                                <div class="testimonial__item__author__text">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h5>Emma Sandoval /<span> Marketing Manager</span></h5>
+                                </div>
+                            </div>
+                            <p>It seems though that some of the biggest problems with the internet advertising trends
+                                are the lack of</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="testimonial__item">
+                            <div class="testimonial__item__author">
+                                <div class="testimonial__item__author__pic">
+                                    <img src="img/testimonial/testimonial-1.png" alt="">
+                                </div>
+                                <div class="testimonial__item__author__text">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h5>John Smith /<span> CEO Colorlib</span></h5>
+                                </div>
+                            </div>
+                            <p>For one thing they usually step all over the hedges and plants on the side of someone’s
+                                house killing</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="testimonial__item">
+                            <div class="testimonial__item__author">
+                                <div class="testimonial__item__author__pic">
+                                    <img src="img/testimonial/testimonial-2.png" alt="">
+                                </div>
+                                <div class="testimonial__item__author__text">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h5>Emma Sandoval /<span> Marketing Manager</span></h5>
+                                </div>
+                            </div>
+                            <p>It seems though that some of the biggest problems with the internet advertising trends
+                                are the lack of</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section End -->
+
+<!-- Footer Section Begin -->
+<footer class="footer set-bg" data-setbg="img/footer-bg.jpg">
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                <div class="footer__about">
+                    <div class="footer__logo">
+                        <img src="img/logo zoom.png" alt="Autobuba Logo" class="img-fluid">
+                    </div>
+                    <div class="footer__contact-box">
+                        <p><i class="fa fa-envelope"></i> info@autobuba.com</p>
+                        <p><i class="fa fa-phone"></i> +1 234 567 8900</p>
+                    </div>
+                    <div class="footer__social">
+                        <a href="#" class="social-btn facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="social-btn twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6 mb-4 mb-md-0">
+                <div class="footer__widget">
+                    <h5 data-translate="Navigation">Navigation</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="contact.html" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Contact Us">Contact Us</span></a></li>
+                        <li><a href="car.html" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Cars">Cars</span></a></li>
+                        <li><a href="blog.html" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Blog">Blog</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6 mb-4 mb-md-0">
+                <div class="footer__widget">
+                    <h5 data-translate="Cars">Cars</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Hatchback">Hatchback</span></a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Sedan">Sedan</span></a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="SUV">SUV</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="footer__brand">
+                    <h5 data-translate="Learn">Learn</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="about.html" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="About Us">About Us</span></a></li>
+                        <li><a href="#chooseUs" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Why Us ?">Why Us ?</span></a></li>
+                        <li><a href="#trustedName" class="text-decoration-none"><i class="fa fa-angle-right"></i> <span data-translate="Who are we ?">Who are we ?</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="copyright">© Copyright 2025 AUTOBUBA. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+    <!-- Simple Phone Button -->
+<div class="phone-container">
+    <div class="phone-logo" id="phoneLogo">
+      <div class="phone-icon">
+        <i class="fa-solid fa-phone"></i>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <h2 class="modal-title">Contact Information</h2>
+      <p>Please call us at:</p>
+      <div class="modal-number-container">
+        <a href="tel:+69 69 690 6969" class="modal-number" id="phoneNumber">+69 69 690 6969</a>
+        <button class="modal-copy-button" id="modalCopyButton">
+          <svg class="modal-copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+          </svg>
+        </button>
+        <span class="copy-tooltip" id="modalTooltip">Copied to clipboard!</span>
+      </div>
+      <button class="close-button" id="closeModal">Close</button>
+    </div>
+  </div>
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="loading.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Translations for about.html
+            const translations = {
+                en: {
+                    // Navigation
+                    "Cars": "Cars",
+                    "Blog": "Blog",
+                    "Car Details": "Car Details",
+                    "About": "About",
+                    "Contact": "Contact",
+                    "Log In": "Log In",
+                    
+                    // Breadcrumb
+                    "About Us": "About Us",
+                    "Home": "Home",
+                    
+                    // About Content
+                    "Welcome To AUTOBUBA": "Welcome To AUTOBUBA",
+                    "Where We Provide Everything You Need To A Car": "Where We Provide Everything You Need To A Car",
+                    "First I will explain what contextual advertising is. Contextual advertising means the advertising of products on a website according to the content the page is displaying. For example if the content of a website was information on a Ford truck then the advertisements": "First I will explain what contextual advertising is. Contextual advertising means the advertising of products on a website according to the content the page is displaying. For example if the content of a website was information on a Ford truck then the advertisements",
+                    "Quality Assurance System": "Quality Assurance System",
+                    "It seems though that some of the biggest problems with the internet advertising trends are the lack of": "It seems though that some of the biggest problems with the internet advertising trends are the lack of",
+                    "Accurate Testing Processes": "Accurate Testing Processes",
+                    "Where do you register your complaints? How can you protest in any form against companies whose": "Where do you register your complaints? How can you protest in any form against companies whose",
+                    "Infrastructure Integration Technology": "Infrastructure Integration Technology",
+                    "So in final analysis: it's true, I hate peeping Toms, but if I had to choose, I'd take one any day over an": "So in final analysis: it's true, I hate peeping Toms, but if I had to choose, I'd take one any day over an",
+                    "Our Mission": "Our Mission",
+                    "Now, I'm not like Robin, that weirdo from my cultural anthropology class; I think that advertising is something that has its place in our society; which for better or worse is structured along a marketplace economy. But, simply because I feel advertising has a right to exist, doesn't mean that I like or agree with it, in its": "Now, I'm not like Robin, that weirdo from my cultural anthropology class; I think that advertising is something that has its place in our society; which for better or worse is structured along a marketplace economy. But, simply because I feel advertising has a right to exist, doesn't mean that I like or agree with it, in its",
+                    "Our Vision": "Our Vision",
+                    "Where do you register your complaints? How can you protest in any form against companies whose advertising techniques you don't agree with? You don't. And on another point of difference between traditional products and their advertising and those of the internet nature, simply ignoring internet advertising is": "Where do you register your complaints? How can you protest in any form against companies whose advertising techniques you don't agree with? You don't. And on another point of difference between traditional products and their advertising and those of the internet nature, simply ignoring internet advertising is",
+                    "Request A Call Back": "Request A Call Back",
+                    "Posters had been a very beneficial marketing tool because it had paved to deliver an effective message that conveyed customer's": "Posters had been a very beneficial marketing tool because it had paved to deliver an effective message that conveyed customer's",
+                    "Name": "Name",
+                    "Email": "Email",
+                    "Phone": "Phone",
+                    "Choose Our Services": "Choose Our Services",
+                    "Buy Cars": "Buy Cars",
+                    "Sell Cars": "Sell Cars",
+                    "Wash Cars": "Wash Cars",
+                    "Submit Now": "Submit Now",
+                    "Testimonials": "Testimonials",
+                    "What People Say About Us": "What People Say About Us",
+                    "Our customers are our biggest supporters. What do they think of us? Lorem": "Our customers are our biggest supporters. What do they think of us? Lorem",
+                    "For one thing they usually step all over the hedges and plants on the side of someone's house killing": "For one thing they usually step all over the hedges and plants on the side of someone's house killing",
+                    "CEO Colorlib": "CEO Colorlib",
+                    "Marketing Manager": "Marketing Manager",
+                    
+                    // Footer
+                    "Contact Us Now!": "Contact Us Now!",
+                    "Any questions? Let us know on +69 69 690 6969": "Any questions? Let us know on +69 69 690 6969",
+                    "Navigation": "Navigation",
+                    "Contact Us": "Contact Us",
+                    "Hatchback": "Hatchback",
+                    "Sedan": "Sedan",
+                    "SUV": "SUV",
+                    "Learn": "Learn",
+                    "Why Us ?": "Why Us ?",
+                    "Who are we ?": "Who are we ?",
+                    "Search here.....": "Search here....."
+                },
+                sq: {
+                    // Navigation
+                    "Cars": "Makinat",
+                    "Blog": "Blogu",
+                    "Car Details": "Detajet e Makinës",
+                    "About": "Rreth Nesh",
+                    "Contact": "Kontakti",
+                    "Log In": "Hyr",
+                    
+                    // Breadcrumb
+                    "About Us": "Rreth Nesh",
+                    "Home": "Kryefaqja",
+                    
+                    // About Content
+                    "Welcome To AUTOBUBA": "Mirësevini në AUTOBUBA",
+                    "Where We Provide Everything You Need To A Car": "Ku Ne Ofrojmë Gjithçka Që Ju Nevojitet Për një Makinë",
+                    "First I will explain what contextual advertising is. Contextual advertising means the advertising of products on a website according to the content the page is displaying. For example if the content of a website was information on a Ford truck then the advertisements": "Së pari do të shpjegoj çfarë është reklamimi kontekstual. Reklamimi kontekstual do të thotë reklamimi i produkteve në një faqe interneti sipas përmbajtjes që faqja po shfaq. Për shembull, nëse përmbajtja e një faqe interneti ishte informacion për një kamion Ford, atëherë reklamat",
+                    "Quality Assurance System": "Sistemi i Sigurimit të Cilësisë",
+                    "It seems though that some of the biggest problems with the internet advertising trends are the lack of": "Duket se disa nga problemet më të mëdha me trendet e reklamimit në internet janë mungesa e",
+                    "Accurate Testing Processes": "Procese të Sakta Testimi",
+                    "Where do you register your complaints? How can you protest in any form against companies whose": "Ku i regjistroni ankesat tuaja? Si mund të protestoni në çfarëdo forme kundër kompanive të cilat",
+                    "Infrastructure Integration Technology": "Teknologjia e Integrimit të Infrastrukturës",
+                    "So in final analysis: it's true, I hate peeping Toms, but if I had to choose, I'd take one any day over an": "Pra, në analizën përfundimtare: është e vërtetë, unë urrej shikuesit fshehurazi, por nëse do të më duhej të zgjidhja, do të merrja një çdo ditë mbi një",
+                    "Our Mission": "Misioni Ynë",
+                    "Now, I'm not like Robin, that weirdo from my cultural anthropology class; I think that advertising is something that has its place in our society; which for better or worse is structured along a marketplace economy. But, simply because I feel advertising has a right to exist, doesn't mean that I like or agree with it, in its": "Tani, unë nuk jam si Robin, ai i çuditshëm nga klasa ime e antropologjisë kulturore; Mendoj se reklamimi është diçka që ka vendin e vet në shoqërinë tonë; e cila për mirë apo keq është e strukturuar përgjatë një ekonomie tregu. Por, thjesht sepse ndjej se reklamimi ka të drejtë të ekzistojë, nuk do të thotë që më pëlqen ose pajtohem me të, në",
+                    "Our Vision": "Vizioni Ynë",
+                    "Where do you register your complaints? How can you protest in any form against companies whose advertising techniques you don't agree with? You don't. And on another point of difference between traditional products and their advertising and those of the internet nature, simply ignoring internet advertising is": "Ku i regjistroni ankesat tuaja? Si mund të protestoni në çfarëdo forme kundër kompanive teknikat e reklamimit të të cilave nuk pajtoheni? Nuk mundeni. Dhe në një tjetër pikë ndryshimi midis produkteve tradicionale dhe reklamimit të tyre dhe atyre të natyrës së internetit, thjesht injorimi i reklamimit në internet është",
+                    "Request A Call Back": "Kërkoni një Telefonatë Kthyese",
+                    "Posters had been a very beneficial marketing tool because it had paved to deliver an effective message that conveyed customer's": "Posterat kanë qenë një mjet shumë i dobishëm marketingu sepse kanë shtruar rrugën për të dhënë një mesazh efektiv që përcjell klientët",
+                    "Name": "Emri",
+                    "Email": "Email",
+                    "Phone": "Telefoni",
+                    "Choose Our Services": "Zgjidhni Shërbimet Tona",
+                    "Buy Cars": "Blini Makina",
+                    "Sell Cars": "Shitni Makina",
+                    "Wash Cars": "Lani Makina",
+                    "Submit Now": "Dërgo Tani",
+                    "Testimonials": "Dëshmitë",
+                    "What People Say About Us": "Çfarë Thonë Njerëzit Për Ne",
+                    "Our customers are our biggest supporters. What do they think of us? Lorem": "Klientët tanë janë mbështetësit tanë më të mëdhenj. Çfarë mendojnë ata për ne? Lorem",
+                    "For one thing they usually step all over the hedges and plants on the side of someone's house killing": "Për një gjë, ata zakonisht shkelin mbi gardhet dhe bimët në anën e shtëpisë së dikujt duke vrarë",
+                    "CEO Colorlib": "CEO Colorlib",
+                    "Marketing Manager": "Menaxher Marketingu",
+                    
+                    // Footer
+                    "Contact Us Now!": "Na Kontaktoni Tani!",
+                    "Any questions? Let us know on +69 69 690 6969": "Keni pyetje? Na njoftoni në +69 69 690 6969",
+                    "Navigation": "Navigimi",
+                    "Contact Us": "Na Kontaktoni",
+                    "Hatchback": "Hatchback",
+                    "Sedan": "Sedan",
+                    "SUV": "SUV",
+                    "Learn": "Mëso",
+                    "Why Us ?": "Pse Ne ?",
+                    "Who are we ?": "Kush jemi ne ?",
+                    "Search here.....": "Kërko këtu....."
+                }
+            };
+        
+            // Add language selector dropdown to the header if it doesn't exist
+            const headerNavWidget = document.querySelector('.header__nav__widget');
+            if (headerNavWidget && !document.querySelector('.language-selector')) {
+                const loginButton = headerNavWidget.querySelector('.primary-btn');
+                
+                // Insert before login button
+                if (loginButton) {
+                    headerNavWidget.insertBefore(languageSelector, loginButton);
+                } else {
+                    headerNavWidget.appendChild(languageSelector);
+                }
+            }
+        
+            // Set initial language from localStorage or default to English
+            let currentLang = localStorage.getItem('language') || 'en';
+            
+            // Apply translations on page load
+            applyTranslations();
+            updateLanguageDisplay();
+            
+            // Handle loading text translation separately
+            handleLoadingText();
+        
+            // Language selection handler
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentLang = this.getAttribute('data-lang');
+                    localStorage.setItem('language', currentLang);
+                    
+                    // Apply translations
+                    applyTranslations();
+                    updateLanguageDisplay();
+                    
+                    // Handle loading text if it's visible
+                    handleLoadingText();
+                });
+            });
+        
+            // Apply translations to the page
+            function applyTranslations() {
+                if (!translations[currentLang]) return;
+                
+                // Add data-translate attributes to elements that need translation
+                addDataTranslateAttributes();
+                
+                // Translate all elements with data-translate attribute
+                document.querySelectorAll('[data-translate]').forEach(el => {
+                    const key = el.getAttribute('data-translate');
+                    if (translations[currentLang][key]) {
+                        el.textContent = translations[currentLang][key];
+                    }
+                });
+                
+                // Special handling for placeholder text in search input
+                const searchInput = document.getElementById('search-input');
+                if (searchInput) {
+                    searchInput.placeholder = currentLang === 'en' ? 'Search here.....' : 'Kërko këtu.....';
+                }
+                
+                // Special handling for form placeholders
+                document.querySelectorAll('input[placeholder], select[placeholder], textarea[placeholder]').forEach(input => {
+                    const placeholderKey = input.placeholder;
+                    if (translations[currentLang][placeholderKey]) {
+                        input.placeholder = translations[currentLang][placeholderKey];
+                    }
+                });
+                
+                // Special handling for breadcrumb home icon
+                const breadcrumbHome = document.querySelector('.breadcrumb__links a[href="./index.html"]');
+                if (breadcrumbHome) {
+                    const homeText = translations[currentLang]["Home"];
+                    breadcrumbHome.innerHTML = `<i class="fa fa-home"></i> ${homeText}`;
+                }
+            }
+        
+            // Add data-translate attributes to elements that need translation
+            function addDataTranslateAttributes() {
+                // Navigation
+                const navItems = document.querySelectorAll('.navbar-nav .nav-item a');
+                navItems.forEach(item => {
+                    if (!item.hasAttribute('data-translate')) {
+                        item.setAttribute('data-translate', item.textContent.trim());
+                    }
+                });
+                
+                // Login button
+                const loginBtn = document.querySelector('.primary-btn');
+                if (loginBtn && !loginBtn.hasAttribute('data-translate')) {
+                    loginBtn.setAttribute('data-translate', loginBtn.textContent.trim());
+                }
+                
+                // Breadcrumb
+                const breadcrumbTitle = document.querySelector('.breadcrumb__text h2');
+                if (breadcrumbTitle && !breadcrumbTitle.hasAttribute('data-translate')) {
+                    breadcrumbTitle.setAttribute('data-translate', breadcrumbTitle.textContent.trim());
+                }
+                
+                const breadcrumbSpan = document.querySelector('.breadcrumb__links span');
+                if (breadcrumbSpan && !breadcrumbSpan.hasAttribute('data-translate')) {
+                    breadcrumbSpan.setAttribute('data-translate', breadcrumbSpan.textContent.trim());
+                }
+                
+                // About section
+                const aboutTitle = document.querySelector('.about__text .section-title h2');
+                if (aboutTitle && !aboutTitle.hasAttribute('data-translate')) {
+                    aboutTitle.setAttribute('data-translate', aboutTitle.textContent.trim());
+                }
+                
+                const aboutSubtitle = document.querySelector('.about__text .section-title p');
+                if (aboutSubtitle && !aboutSubtitle.hasAttribute('data-translate')) {
+                    aboutSubtitle.setAttribute('data-translate', aboutSubtitle.textContent.trim());
+                }
+                
+                const aboutDesc = document.querySelector('.about__text__desc p');
+                if (aboutDesc && !aboutDesc.hasAttribute('data-translate')) {
+                    aboutDesc.setAttribute('data-translate', aboutDesc.textContent.trim());
+                }
+                
+                // Feature items
+                document.querySelectorAll('.about__feature__item h5').forEach(heading => {
+                    if (!heading.hasAttribute('data-translate')) {
+                        heading.setAttribute('data-translate', heading.textContent.trim());
+                    }
+                });
+                
+                document.querySelectorAll('.about__feature__item p').forEach(paragraph => {
+                    if (!paragraph.hasAttribute('data-translate')) {
+                        paragraph.setAttribute('data-translate', paragraph.textContent.trim());
+                    }
+                });
+                
+                // Mission and Vision
+                document.querySelectorAll('.about__mission__title h5').forEach(heading => {
+                    if (!heading.hasAttribute('data-translate')) {
+                        heading.setAttribute('data-translate', heading.textContent.trim());
+                    }
+                });
+                
+                document.querySelectorAll('.about__mission__text p').forEach(paragraph => {
+                    if (!paragraph.hasAttribute('data-translate')) {
+                        paragraph.setAttribute('data-translate', paragraph.textContent.trim());
+                    }
+                });
+                
+                // Call back form
+                const callbackTitle = document.querySelector('.about__form__title h5');
+                if (callbackTitle && !callbackTitle.hasAttribute('data-translate')) {
+                    callbackTitle.setAttribute('data-translate', callbackTitle.textContent.trim());
+                }
+                
+                const callbackDesc = document.querySelector('.about__form__title p');
+                if (callbackDesc && !callbackDesc.hasAttribute('data-translate')) {
+                    callbackDesc.setAttribute('data-translate', callbackDesc.textContent.trim());
+                }
+                
+                // Form labels and placeholders
+                document.querySelectorAll('.about__form__input label').forEach(label => {
+                    if (!label.hasAttribute('data-translate')) {
+                        label.setAttribute('data-translate', label.textContent.trim());
+                    }
+                });
+                
+                document.querySelectorAll('.about__form__input input, .about__form__input select').forEach(input => {
+                    if (input.placeholder && !input.hasAttribute('data-placeholder-translate')) {
+                        input.setAttribute('data-placeholder-translate', input.placeholder);
+                    }
+                });
+                
+                // Submit button
+                const submitBtn = document.querySelector('.about__form__btn button');
+                if (submitBtn && !submitBtn.hasAttribute('data-translate')) {
+                    submitBtn.setAttribute('data-translate', submitBtn.textContent.trim());
+                }
+                
+                // Testimonials
+                const testimonialTitle = document.querySelector('.testimonial__text .section-title h2');
+                if (testimonialTitle && !testimonialTitle.hasAttribute('data-translate')) {
+                    testimonialTitle.setAttribute('data-translate', testimonialTitle.textContent.trim());
+                }
+                
+                const testimonialDesc = document.querySelector('.testimonial__text .section-title p');
+                if (testimonialDesc && !testimonialDesc.hasAttribute('data-translate')) {
+                    testimonialDesc.setAttribute('data-translate', testimonialDesc.textContent.trim());
+                }
+                
+                document.querySelectorAll('.testimonial__item p').forEach(quote => {
+                    if (!quote.hasAttribute('data-translate')) {
+                        quote.setAttribute('data-translate', quote.textContent.trim());
+                    }
+                });
+                
+                document.querySelectorAll('.testimonial__item__author h5').forEach(author => {
+                    if (!author.hasAttribute('data-translate')) {
+                        author.setAttribute('data-translate', author.textContent.trim());
+                    }
+                });
+                
+                document.querySelectorAll('.testimonial__item__author span').forEach(role => {
+                    if (!role.hasAttribute('data-translate')) {
+                        role.setAttribute('data-translate', role.textContent.trim());
+                    }
+                });
+                
+                // Footer
+                const footerContactTitle = document.querySelector('.footer__contact__title h2');
+                if (footerContactTitle && !footerContactTitle.hasAttribute('data-translate')) {
+                    footerContactTitle.setAttribute('data-translate', footerContactTitle.textContent.trim());
+                }
+                
+                const footerAboutText = document.querySelector('.footer__about p');
+                if (footerAboutText && !footerAboutText.hasAttribute('data-translate')) {
+                    footerAboutText.setAttribute('data-translate', footerAboutText.textContent.trim());
+                }
+                
+                document.querySelectorAll('.footer__widget h5, .footer__brand h5').forEach(heading => {
+                    if (!heading.hasAttribute('data-translate')) {
+                        heading.setAttribute('data-translate', heading.textContent.trim());
+                    }
+                });
+                
+                document.querySelectorAll('.footer__widget ul li a span, .footer__brand ul li a span').forEach(link => {
+                    if (!link.hasAttribute('data-translate')) {
+                        link.setAttribute('data-translate', link.textContent.trim());
+                    }
+                });
+            }
+        
+            // Update the dropdown display
+            function updateLanguageDisplay() {
+                const display = document.getElementById('currentLanguage');
+                if (display) {
+                    display.textContent = currentLang === 'en' ? 'English' : 'Shqip';
+                }
+            }
+            
+            // Special handling for the loading text animation
+            function handleLoadingText() {
+                const loadingScreen = document.getElementById('loading-screen');
+                if (loadingScreen && window.getComputedStyle(loadingScreen).display !== 'none') {
+                    const loadingText = document.querySelector('.loading-text');
+                    if (loadingText) {
+                        // Clear existing content
+                        loadingText.innerHTML = '';
+                        
+                        // Create new content based on language
+                        const text = currentLang === 'en' ? 'LOADING...' : 'DUKE NGARKUAR...';
+                        
+                        // Add each letter as a span for animation
+                        for (let i = 0; i < text.length; i++) {
+                            const span = document.createElement('span');
+                            span.textContent = text[i];
+                            loadingText.appendChild(span);
+                        }
+                    }
+                }
+            }
+        });
+        </script>
+</body>
+
+</html>
